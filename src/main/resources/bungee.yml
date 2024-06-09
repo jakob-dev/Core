@@ -1,0 +1,4 @@
+name: core
+version: '${project.version}'
+main: de.einfachjaakob.core.bungee.Core
+authors: [ EinfachJaakob ]

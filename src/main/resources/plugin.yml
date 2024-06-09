@@ -1,0 +1,9 @@
+name: core
+version: '${project.version}'
+main: de.einfachjaakob.core.bukkit.Core
+author: EinfachJaakob
+api-version: '1.20'
+load: POSTWORLD
+commands:
+  core:
+    description: manage the core plugin

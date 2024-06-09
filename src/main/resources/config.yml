@@ -1,0 +1,27 @@
+#          Core-Config          #
+
+Database:
+  host: localhost
+  port: 3306
+  username: root
+  password: ""
+  database: minecraft
+  connection-timeout: 5000
+  max-pool-size: 10
+
+Servers:
+  game-servers:
+    - "BauServer-*"
+  lobby-servers:
+    - "Lobby-*"
+
+
+Economy:
+  enabled: true
+  currency-name: Dollar
+  currency-name-plural: Dollars
+  currency-symbol: $
+  starting-balance: 100
+
+
+

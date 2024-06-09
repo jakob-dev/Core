@@ -32,6 +32,23 @@ public class RedisManager {
         }
     }
 
+    public void set(String key, String value) {
+        try (Jedis jedisResource = jedis.getResource()) {
+            jedisResource.set(key, value);
+        }
+    }
+
+    public String get(String key) {
+        try (Jedis jedisResource = jedis.getResource()) {
+            return jedisResource.get(key);
+        }
+    }
+
+
+    public void test() {
+        jedis.getResource().set("Core.config", "test");
+    }
+
     public JedisPool getJedis() {
         return jedis;
     }

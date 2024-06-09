@@ -18,17 +18,8 @@ public class RedisListener extends JedisPubSub {
 
     @Override
     public void onMessage(String channel, String message) {
-
-        if (channel.equalsIgnoreCase(plugin.getServerID())) {
-
+        if (channel.equalsIgnoreCase("core.global")) {
             RedisPayload payload = redisManager.fromJson(message);
-
-            if (payload instanceof CoreConfig) {
-
-                CoreConfig coreConfig = (CoreConfig) payload;
-                plugin.onConfigReceived(coreConfig);
-
-            }
         }
     }
 

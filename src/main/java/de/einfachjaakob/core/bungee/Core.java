@@ -27,15 +27,12 @@ public class Core extends Plugin {
 
         redisManager = new RedisManager("127.0.0.1", 6379);
         redisManager.subscribe(new RedisListener(this, redisManager), "core.global");
+        redisManager.set("core.config", redisManager.toJson(coreConfig));
 
         coreAPI = new CoreAPI(coreConfig);
         coreAPI.initDatabase();
     }
 
-    public void onHandshakeReceived(String serverID) {
-        redisManager.subscribe(new RedisListener(this, redisManager), serverID);
-        redisManager.publish(serverID, redisManager.toJson(coreConfig));
-    }
 
     public CoreAPI getCoreAPI() {
         return coreAPI;

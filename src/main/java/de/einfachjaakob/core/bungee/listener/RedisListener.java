@@ -20,15 +20,7 @@ public class RedisListener extends JedisPubSub {
     public void onMessage(String channel, String message) {
 
         if (channel.equalsIgnoreCase("core.global")) {
-
             RedisPayload payload = redisManager.fromJson(message);
-
-            if (payload instanceof HandshakePayload) {
-
-                HandshakePayload handshake = (HandshakePayload) payload;
-                plugin.onHandshakeReceived(handshake.getServerID());
-
-            }
         }
     }
 

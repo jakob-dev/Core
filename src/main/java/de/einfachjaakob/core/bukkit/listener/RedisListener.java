@@ -1,6 +1,5 @@
 package de.einfachjaakob.core.bukkit.listener;
 
-import de.einfachjaakob.core.api.config.CoreConfig;
 import de.einfachjaakob.core.api.redis.RedisManager;
 import de.einfachjaakob.core.api.redis.payloads.RedisPayload;
 import de.einfachjaakob.core.bukkit.Core;
